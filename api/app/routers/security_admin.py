@@ -117,7 +117,7 @@ def review(case_id: UUID, body: ReviewIn, user: CurrentUser = Depends(require_ad
         elif body.decision == "restrict":
             c.execute("insert into user_restrictions (user_id, max_active_holds, reason, created_by, expires_at) "
                       "values (%s, 1, %s, %s, now() + interval '24 hours')",
-                      (case["user_id"], f"admin review: {body.note[:200]}", user.id))
+                      (case["user_id"], "admin review" + (f": {body.note[:200]}" if body.note.strip() else ""), user.id))
             c.execute("update investigation_cases set status='in_review', updated_at=now() where id=%s", (case_id,))
         else:
             c.execute("update investigation_cases set status='in_review', updated_at=now() where id=%s", (case_id,))
