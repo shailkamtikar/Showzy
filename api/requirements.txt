@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+psycopg[binary,pool]
+PyJWT[crypto]
+httpx
+google-genai
+langgraph

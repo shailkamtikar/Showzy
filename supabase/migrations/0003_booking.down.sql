@@ -1,0 +1,11 @@
+drop function if exists confirm_demo_payment(uuid, uuid, text, int);
+drop function if exists create_hold(uuid, uuid, uuid[], int, int, int);
+drop function if exists release_expired_holds(uuid);
+alter table seat_inventory drop constraint if exists seat_inventory_hold_fk;
+drop table if exists tickets cascade;
+drop table if exists demo_payment_attempts cascade;
+drop table if exists order_items cascade;
+drop table if exists orders cascade;
+drop table if exists seat_hold_items cascade;
+drop table if exists seat_holds cascade;
+drop table if exists user_restrictions cascade;

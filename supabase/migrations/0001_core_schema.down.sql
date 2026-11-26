@@ -1,0 +1,14 @@
+drop table if exists seat_inventory cascade;
+drop table if exists show_prices cascade;
+drop table if exists shows cascade;
+drop table if exists seats cascade;
+drop table if exists sections cascade;
+drop table if exists price_tiers cascade;
+drop table if exists venue_layout_versions cascade;
+drop table if exists venue_spaces cascade;
+drop table if exists venues cascade;
+drop table if exists catalog_items cascade;
+drop type if exists seat_status;
+drop type if exists show_status;
+drop type if exists venue_type;
+drop type if exists item_type;
